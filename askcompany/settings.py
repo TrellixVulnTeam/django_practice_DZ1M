@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # third apps
+    'bootstrap4',
     'django_extensions',
     'debug_toolbar',
     # locals apps
@@ -64,7 +65,10 @@ ROOT_URLCONF = 'askcompany.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates']
+        'DIRS': [
+            # File system Template Loader
+            os.path.join(BASE_DIR, 'askcompany', 'templates'),
+        ]
         ,
         'APP_DIRS': True,
         'OPTIONS': {
